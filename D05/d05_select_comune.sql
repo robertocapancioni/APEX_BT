@@ -2,60 +2,60 @@ select c.comune,
        c.provincia_cod,
        p.provincia_cod,
        p.provincia
-  from d04_comune c
-  join d04_provincia p
+  from d05_comune c
+  join d05_provincia p
     on c.provincia_cod = p.provincia_cod
     
 delete 
-  from d04_comune 
+  from d05_comune 
  where provincia_cod in ('BG','BS','CO')
 
 delete 
-  from d04_provincia 
+  from d05_provincia 
  where provincia_cod in ('MN','PV','SO','VA')
 
 select c.comune,
        c.provincia_cod,
        p.provincia_cod,
        p.provincia
-  from d04_comune c
+  from d05_comune c
   left
-  join d04_provincia p
+  join d05_provincia p
     on c.provincia_cod = p.provincia_cod
 
 select c.comune,
        c.provincia_cod,
        p.provincia_cod,
        p.provincia
-  from d04_comune c
+  from d05_comune c
   left
-  join d04_provincia p
+  join d05_provincia p
     on c.provincia_cod = p.provincia_cod
 
 select c.comune,
        c.provincia_cod,
        p.provincia_cod,
        p.provincia
-  from d04_comune c
+  from d05_comune c
  right
-  join d04_provincia p
+  join d05_provincia p
     on c.provincia_cod = p.provincia_cod
 
 select c.comune,
        c.provincia_cod,
        p.provincia_cod,
        p.provincia
-  from d04_comune c
+  from d05_comune c
   full
-  join d04_provincia p
+  join d05_provincia p
     on c.provincia_cod = p.provincia_cod
 
 insert 
-  into d04_comune 
+  into d05_comune 
        (comune,provincia_cod)
 values ('Arese','MI')
 
 insert 
-  into d04_provincia
+  into d05_provincia
        (provincia_cod,provincia)
 values ('MI','Milano (doppio)')
