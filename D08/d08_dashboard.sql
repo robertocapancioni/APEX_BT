@@ -42,3 +42,11 @@ order by REVENUE_2020 desc nulls last
       from d08_classifica_ft
   group by NAZIONE
   order by NAZIONE
+
+
+   select settore,
+           sum(revenue_2020/1000000) as revenue_2020
+      from d08_classifica_ft
+           where nazione = nvl(:P1_NAZIONE,nazione)
+      where (:P1_NAZIONE is null or nazione in(select column_value from table(apex_string.split(:P1_NAZIONE,':'))))
+  group by settore
